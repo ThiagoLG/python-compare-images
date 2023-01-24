@@ -4,8 +4,11 @@ import numpy as np
 
 print("teste")
 
-original = cv2.imread('ronaldinho_1.jpg')
-image_to_compare  = cv2.imread('ronaldinho_2.jpg')
+original_img = cv2.imread('ronaldinho_1.jpg')
+image_to_compare_img  = cv2.imread('ronaldinho_2.jpg')
+
+original = cv2.cvtColor(original_img, cv2.COLOR_BGR2GRAY)
+image_to_compare = cv2.cvtColor(image_to_compare_img, cv2.COLOR_BGR2GRAY)
 
 if original.shape == image_to_compare.shape:
   print('imagens possuem mesmo tamanho e canais')
