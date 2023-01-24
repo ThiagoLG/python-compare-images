@@ -4,8 +4,8 @@ import numpy as np
 
 print("teste")
 
-original_img = cv2.imread('ronaldinho_1.jpg')
-image_to_compare_img  = cv2.imread('ronaldinho_2.jpg')
+original_img = cv2.imread('adulto_ney_1.jpg')
+image_to_compare_img  = cv2.imread('adulto_ney_2.jpg')
 
 original = cv2.cvtColor(original_img, cv2.COLOR_BGR2GRAY)
 image_to_compare = cv2.cvtColor(image_to_compare_img, cv2.COLOR_BGR2GRAY)
@@ -33,7 +33,7 @@ matches = flann.knnMatch(desc_1, desc_2, k=2)
 good_points = []
 
 for m, n in matches:
-  if m.distance < 0.9*n.distance:
+  if m.distance < 0.7 * n.distance:
     good_points.append(m)
 
 number_keypoints = 0
